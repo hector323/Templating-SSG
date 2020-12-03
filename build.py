@@ -6,10 +6,64 @@ pages = [
 
 # create a new function (and accompanying invocation) to “auto-generate” the list. Then invoke the code from the previous homework to use the list.
 
-print(pages)
+
+# 2.1.1
 import glob
+
 all_html_files = glob.glob("content/*.html")
 print(all_html_files)
+
+# 2.1.2
+# Glob is a placeholder, such as the asterisk in “wild-card expansion syntax” in Bash (such as *.txt.).
+import os
+file_path = "content/blog.html"
+file_name = os.path.basename(file_path)
+print(file_name)
+name_only, extension = os.path.splitext(file_name)
+print(name_only)
+
+
+# 2.1.3
+pages = []
+pages.append({
+  "filename": "content/index.html",
+  "title": "Index",
+  "output": "docs/index.html",
+})
+print(pages)
+
+# 2.1.4 Phase Summary
+# apply templates to all files it finds in the content directory, generating parallel output files in the docs/
+
+# 2.2 Phase 2 - Jinja2 Templating
+# Background: Right now, you are using a lot of “replace” methods to do templating. This is much less professional, and limits what you can do with your templating.
+# Improve your build.py to use Jinja templates instead of the “home-made” replace-based templates you are using thus-far. For this to work, you must use pipenv to install jinja2.
+
+# 2.2.1
+# pipenv --python3
+# pipenv  --shell
+# pipenv  --jinja2
+
+# 2.2.2
+from jinja2 import Template
+index_html = open("index.html").read()
+template_html = open("base.html").read()
+template = Template(template_html)
+template.render(
+    title="Homepage",
+    content=index_html,
+)
+
+
+# 2.3 Phase 3 - Improved templating
+
+
+# {% for page in pages %}
+# <a href="{{ page.output_filename }}">{{ page.title }}</a>
+# {% endfor %}
+
+
+
 
 # Get the main base template
 # First, get the template files
