@@ -1,15 +1,15 @@
 # list of all content files
 pages = [
-  {
-  "filename": "content/blog.html", "output": "docs/index.html", "title": "My Personal Blogs"
-  },
-  {
-  "filename": "content/projects.html", "output": "docs/projects.html", "title": "Projects"
-  },
-  {
-  "filename": "content/contact.html", "output": "docs/contact.html", "title": "About Me"
-  }
+
 ]
+
+
+# create a new function (and accompanying invocation) to “auto-generate” the list. Then invoke the code from the previous homework to use the list.
+
+print(pages)
+import glob
+all_html_files = glob.glob("content/*.html")
+print(all_html_files)
 
 # Get the main base template
 # First, get the template files
