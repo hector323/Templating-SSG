@@ -50,8 +50,8 @@ print(pages)
 
 # 2.2.2
 from jinja2 import Template
-index_html = open("index.html").read()
-template_html = open("base.html").read()
+index_html = open("./content/index.html").read()
+template_html = open("./template/base.html").read()
 template = Template(template_html)
 template.render(
     title="Homepage",
@@ -65,6 +65,12 @@ template.render(
 # {% for page in pages %}
 # <a href="{{ page.output_filename }}">{{ page.title }}</a>
 # {% endfor %}
+
+# template.render(pages=pages, content=content_html)
+
+
+
+
 
 
 
