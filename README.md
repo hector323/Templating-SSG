@@ -4,7 +4,7 @@ The goal of this assignment is to create a static site generator using Python us
 
 This written custom static generator will give you greater power in customizing the template and updating the site so that the content remains relevant.
 
-Thid Repo will have the following files:
+This project will contain the following files:
 
   <ul>
     <li>content</li>
